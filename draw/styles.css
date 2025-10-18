@@ -1,0 +1,49 @@
+/* Custom styles for canvas application */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#myCanvas {
+    background-color: #ffffff;
+    cursor: crosshair;
+}
+
+#myCanvas:active {
+    cursor: crosshair;
+}
+
+/* Additional utility classes */
+.container {
+    max-width: 1200px;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bg-white {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #myCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+}

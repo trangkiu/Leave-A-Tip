@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave A tip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8 flex flex-col items-center">
+        <h1 class="p-5 font-bold text-xl text-center pb-30 text-xl">Leave a tip</h1>
+        <div class="flex flex-col">
+            <div class="flex gap-4">
+                <button id="progressBar_0">
+                    <div>
+                        <h2 id="tipPercentage_0"></h2>
+                        <p id="tipAmount_0"></p>
+                    </div>
+                </button>
+                <button id="progressBar_1">
+                    <div>
+                        <h2 id="tipPercentage_1"></h2>
+                        <p id="tipAmount_1"></p>
+                    </div>
+                </button>
+                <button id="progressBar_2">
+                    <div>
+                        <h2 id="tipPercentage_2"></h2>
+                        <p id="tipAmount_2"></p>
+                    </div>
+                </button>
+                <button id="progressBar_3">
+                    <div>
+                        <h2 id="tipPercentage_3"></h2>
+                        <p id="tipAmount_3"></p>
+                    </div>
+                </button>
+            </div>
+            <button id="customBtn" class="h-[70px]">Custom amount</button>
+            <button id="skipBtn" class="h-[10px]">Skip</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    const tipPercentage = [15, 20, 25, 30];
+    const height = ["100px", "150px", "200px", "250px"];
+
+    const bill = 165;
+    const tipArray = $('[id^="tipPercentage_"]');
+    const tipAmountArray = $('[id^="tipAmount_"]');
+    const barArray = $('[id^="progressBar_"]');
+
+    shuffle(tipPercentage);
+    shuffle(height);
+
+    for (let i = 0; i < tipArray.length; i++) {
+        console.log(tipArray[i]);
+        $(tipArray[i]).text(tipPercentage[i] + "%");
+        $(tipAmountArray[i]).text("$" + bill * tipPercentage[i] / 100);
+        barArray[i].style.height = height[i];
+
+    }
+
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+</script>
+
+
+
+</html>
