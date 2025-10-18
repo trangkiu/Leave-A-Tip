@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Leave a tip?</h1>
+
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <!-- <span class="text-lg font-semibold text-gray-700">%:</span> -->
+                <div id="progressBar"
+                    class="w-[400px] h-8 border-2 border-gray-400 rounded overflow-hidden relative flex items-center justify-center">
+                    <div id="myBar" class="absolute left-0 top-0 h-full flex items-center justify-center">
+                    </div>
+                    <h2 id="tipPercentage" class="relative z-10">0%</h2>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start gap-2">
+                <div class="relative">
+                    <canvas id="mazeCanvas" class="border-2 border-gray-300 rounded-lg shadow-md" width="625"
+                        height="625">
+                        Your browser does not support the canvas element.
+                    </canvas>
+                    <button id="skipBtn"
+                        class="absolute w-[25px] h-[20px]  text-xs bg-green-500 text-white rounded hover:bg-green-600 transition whitespace-nowrap">
+                        Skip
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-6">
+                <button id="payNowBtn" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    Pay now to end the suffer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="payModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <h2 class="modal-title">Payment Summary</h2>
+            <div class="modal-body">
+                <div class="breakdown">
+                    <div class="breakdown-row">
+                        <span class="breakdown-label">Original Bill:</span>
+                        <span id="originalBill" class="breakdown-value">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="breakdown-label">Tip (<span id="tipPercent">0</span>%):</span>
+                        <span id="tipAmount" class="breakdown-value">$0.00</span>
+                    </div>
+                    <div class="breakdown-divider"></div>
+                </div>
+                <p class="total-label">Total Bill:</p>
+                <p id="totalBill" class="total-amount">$0.00</p>
+                <p class="thank-you">Thank you!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
