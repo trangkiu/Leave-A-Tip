@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Canvas Application</h1>
+
+            <div class="flex justify-center">
+                <canvas
+                    id="myCanvas"
+                    class="border-2 border-gray-300 rounded-lg shadow-md"
+                    width="800"
+                    height="600">
+                    Your browser does not support the canvas element.
+                </canvas>
+            </div>
+
+            <div class="mt-6 flex justify-center gap-4">
+                <button id="clearBtn" class="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                    Clear Canvas
+                </button>
+                <button id="drawBtn" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    Draw Sample
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
